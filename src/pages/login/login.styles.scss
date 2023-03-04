@@ -16,14 +16,24 @@
 }
 
 .Login-Form {
-  width: 45vh;
+  width: 50vh;
   margin: 20px;
 }
 
 @media (max-width:600px) {
+  
+  .Login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  .Login-card{
-    scale: 1.2;
   }
-
+  .Login-card{
+    margin-top: 0;
+    scale: 0.8;
+  }
+  .Login-Form {
+    margin: 0;
+    padding: 20px;
+  }
 }

@@ -13,15 +13,15 @@ const Signup = () => {
     
     <div className="Signup">
 
-      <div className="Sign-card">
+<div className="Sign-card">
           <Text  fontSize={"3xl"} p="10px" align="center"  >
             Create an account
           </Text>
           <div className="Signup-Form">
-            <SignupForm  toast={toast} />
+          <SignupForm  toast={toast} />
           </div>
       </div>
-        
+
     </div>
     
   );

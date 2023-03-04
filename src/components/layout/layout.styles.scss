@@ -1,5 +1,6 @@
 .Navbar {
     display: flex;
+    width: auto;
 }
 
 .Navbar-Container {
@@ -36,7 +37,7 @@ li{
   display: flex;
   align-items: center;
   justify-content: start;
-  width: 75%;
+  width: 100%;
   margin-left: 30px;
 }
 
