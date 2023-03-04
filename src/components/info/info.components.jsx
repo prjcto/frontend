@@ -67,45 +67,61 @@ const Info = () => {
                     <Thead>
                       <Tr>
                         <Th>Servers</Th>
-                        <Th>Price</Th>
+                        <Th>Skrill</Th>
+                        <Th>Credit Card</Th>
+                        <Th>usdt</Th>
                         <Th>Status</Th>
                       </Tr>
-                      <TableCaption className="CP">Dofus Kamas</TableCaption>
+                      <TableCaption className="CP">Dofus Kamas  </TableCaption>
                     </Thead>
                     
                     <Tbody>
                       <Tr>
                         <Td>Draconiros</Td>
                         <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td >Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td>HellMina</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>2.85€/M</Td>
                         <Td >Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td>Imagiro</Td>
                         <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td >Orukam	</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>2.85€/M</Td>
                         <Td>Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td >TalKasha	</Td>
                         <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td >Tylezia	</Td>
                         <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td >Ombre-Shadow</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>2.85€/M</Td>
                         <Td>Sourcing</Td>
                       </Tr>
@@ -115,15 +131,19 @@ const Info = () => {
                   <Table variant='simple'>
                     
                     <Tbody>
-                    <TableCaption align="center">Dofus touch kama</TableCaption>
+                    <TableCaption align="center">Dofus touch kamas</TableCaption>
 
                       <Tr>
                         <Td>Brutas</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>2.85€/M</Td>
                         <Td >Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td>Dodge</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>2.85€/M</Td>
                         <Td >Sourcing</Td>
                       </Tr>
@@ -135,10 +155,14 @@ const Info = () => {
                       <Tr>
                         <Td >Oshimo	</Td>
                         <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td >Terra Cogita		</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>2.85€/M</Td>
                         <Td>Sourcing</Td>
                       </Tr>
@@ -153,25 +177,35 @@ const Info = () => {
                       <Tr>
                         <Td>Crail</Td>
                         <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td >Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td>Boune</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>2.85€/M</Td>
                         <Td >Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td>Galgarion</Td>
                         <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td >Eratz	</Td>
                         <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>Sourcing</Td>
                       </Tr>
                       <Tr>
                         <Td>Henual</Td>
+                        <Td>2.85€/M</Td>
+                        <Td>2.85€/M</Td>
                         <Td>2.85€/M</Td>
                         <Td>Sourcing</Td>
                       </Tr>
