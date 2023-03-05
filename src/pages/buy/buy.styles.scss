@@ -1,5 +1,15 @@
 .Buy {
-  background-color: #0a3915;
+  background: rgb(227,198,91);
+  background: linear-gradient(270deg, rgba(227,198,91,1) 0%, rgba(236,215,135,1) 20%, rgba(227,198,91,1) 50%, rgba(236,215,135,1) 80%, rgba(227,198,91,1) 100%);
   color: white;
   padding: 20px;
+}
+
+.card{
+  background: red;
+}
+
+@media (max-width:600px) {
+ 
+
 }

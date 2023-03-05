@@ -62,6 +62,9 @@ const Sell = () => {
         </Link>{" "}
         first before place order
       </Text>
+
+
+      
       <FormControl className="all">
         <FormControl className="left">
           <FormLabel>Server:</FormLabel>

@@ -68,7 +68,7 @@ const Info = () => {
                       <Tr>
                         <Th>Servers</Th>
                         <Th>Skrill</Th>
-                        <Th>Credit Card</Th>
+                        <Th>PAYPAL</Th>
                         <Th>usdt</Th>
                         <Th>Status</Th>
                       </Tr>
