@@ -3,12 +3,16 @@
 background: linear-gradient(270deg, rgba(227,198,91,1) 0%, rgba(236,215,135,1) 20%, rgba(227,198,91,1) 50%, rgba(236,215,135,1) 80%, rgba(227,198,91,1) 100%);
   color: #000;
   padding: 20px;
-  height: 92.7vh;
+  height: 112vh;
 }
 
 .dofus-logos {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
+}
+.img-e{
+  width: 30%;
 }
 
 .note {
@@ -19,14 +23,8 @@ background: linear-gradient(270deg, rgba(227,198,91,1) 0%, rgba(236,215,135,1) 2
   margin-right: 10px;
 }
 
-@media (max-width:600px) {
-  .img{
-    width: 33%;
+@media (max-width:768px){
+  .Exchange{
+    height: 100vh;
   }
-  .Exchange {
-
-    height: auto;
-  }
-
-
 }
