@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Flex, Link, Image } from "@chakra-ui/react";
+import { Text, Link, Image } from "@chakra-ui/react";
 
 import dofus from "../../assets/Dofus.png";
 import touch from "../../assets/touch.png";
@@ -10,88 +10,74 @@ import "./buy.styles.scss";
 const Buy = () => {
   return (
     <div className="Buy">
-      <Flex justifyContent="center" gap="10">
+      
+
+      
+
+
         <div className="card">
-          <Link href="dofus-buy">
-            <Text
-              backgroundColor="#1c8a31"
-              fontSize="xl"
-              align={"center"}
-              borderRadius="8px 8px 0 0"
-            >
-              Dofus Kamas
-            </Text>
+          <Link href="dofus-buy" >
+            
             <center>
               {" "}
               <Image src={dofus} className="img" />
             </center>
-          </Link>
-          <Text
-            backgroundColor="#1c8a31"
-            fontSize="xl"
-            align={"center"}
-            borderRadius="0 0 8px 8px"
+          
+          <Text 
+          fontSize="xl"
+          as="b"
           >
-            <Text as="b">Delivery time: </Text>5 minutes à 24 heures.
-            <br />
-            <Text as="b">Méthode de livraison: </Text>Astrub, face à face.
+            Méthode de livraison: Astrub, face à face
           </Text>
+          </Link>
         </div>
+
+        
 
 
         <div className="card">
           <Link href="dofus-touch-buy">
-            <Text
-              backgroundColor="#1c8a31"
-              fontSize="xl"
-              align={"center"}
-              borderRadius="8px 8px 0 0"
-            >
-              Dofus Touch Kamas
-            </Text>
+            
             <center>
               {" "}
               <Image src={touch} className="img" />
             </center>
-          </Link>
+          
           <Text
-            backgroundColor="#1c8a31"
-            fontSize="xl"
-            align={"center"}
-            borderRadius="0 0 8px 8px"
+          fontSize="xl"
+          as="b"
           >
-            <Text as="b">Delivery time: </Text>5 minutes à 24 heures.
-            <br />
-            <Text as="b">Méthode de livraison: </Text>Astrub, face à face.
+            Méthode de livraison: Astrub, face à face
           </Text>
+          </Link>
         </div>
+
+
+
+
         <div className="card">
-          <Link href="dofus-retro-buy">
-            <Text
-              backgroundColor="#1c8a31"
-              fontSize="xl"
-              align={"center"}
-              borderRadius="8px 8px 0 0"
-            >
-              Dofus Retro Kamas
-            </Text>
+          <Link href="dofus-retro-buy" >
+            
             <center>
               {" "}
               <Image src={retro} className="img" />
             </center>
-          </Link>
-          <Text
-            backgroundColor="#1c8a31"
-            fontSize="xl"
-            align={"center"}
-            borderRadius="0 0 8px 8px"
+          
+          
+          <Text 
+          fontSize="xl"
+          as="b"
           >
-            <Text as="b">Delivery time: </Text>5 minutes à 24 heures.
-            <br />
-            <Text as="b">Méthode de livraison: </Text>Astrub, face à face.
+            Méthode de livraison: <Text>Astrub, face à face</Text>
           </Text>
+          </Link>
+
         </div>
-      </Flex>
+
+
+
+
+      
     </div>
   );
 };

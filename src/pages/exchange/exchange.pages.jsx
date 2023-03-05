@@ -25,9 +25,9 @@ const Exchange = () => {
       </Text>
       <hr />
       <div className="dofus-logos">
-        <Image src={dofus} className="img" />
-        <Image src={touch} className="img" />
-        <Image src={retro} className="img" />
+        <Image src={dofus} className="img-e" />
+        <Image src={touch} className="img-e" />
+        <Image src={retro} className="img-e" />
       </div>
       <FormControl isRequired>
         <FormLabel>Server you pay</FormLabel>
