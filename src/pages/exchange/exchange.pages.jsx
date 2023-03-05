@@ -86,14 +86,14 @@ const Exchange = () => {
       <Text
         display="inline-flex"
         marginBlockStart="1em"
-        color="green.300"
+        color="green.500"
         className="note"
       >
         <FaCheckCircle /> We will send you private messages in-game with the
         exchange code you provide in order to confirm that the receiver who is
         exchanging with you is from our staff.
       </Text>
-      <Text display="inline-flex" color="red.300" className="note">
+      <Text display="inline-flex" color="red.500" className="note">
         <FaTimesCircle />
         Warning: Do not tell anyone your Code. If someone gives you an incorrect
         Code, block it !!

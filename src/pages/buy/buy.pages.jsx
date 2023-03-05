@@ -37,6 +37,8 @@ const Buy = () => {
             <Text as="b">Méthode de livraison: </Text>Astrub, face à face.
           </Text>
         </div>
+
+
         <div className="card">
           <Link href="dofus-touch-buy">
             <Text
