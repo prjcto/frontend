@@ -93,6 +93,9 @@ const Exchange = () => {
         exchange code you provide in order to confirm that the receiver who is
         exchanging with you is from our staff.
       </Text>
+
+      <br></br>
+
       <Text display="inline-flex" color="red.500" className="note">
         <FaTimesCircle />
         Warning: Do not tell anyone your Code. If someone gives you an incorrect
