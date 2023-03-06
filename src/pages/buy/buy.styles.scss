@@ -1,37 +1,36 @@
 .Buy {
+
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  background: rgb(227, 198, 91);
-  background: linear-gradient(
-    270deg,
-    rgba(227, 198, 91, 1) 0%,
-    rgba(236, 215, 135, 1) 20%,
-    rgba(227, 198, 91, 1) 50%,
-    rgba(236, 215, 135, 1) 80%,
-    rgba(227, 198, 91, 1) 100%
-  );
+  background: rgb(227,198,91);
+  background: linear-gradient(270deg, rgba(227,198,91,1) 0%, rgba(236,215,135,1) 20%, rgba(227,198,91,1) 50%, rgba(236,215,135,1) 80%, rgba(227,198,91,1) 100%);
   color: white;
   padding: 20px;
 }
 
-table {
+table{
   color: #000;
 }
 
-.card {
+.card{
   text-align: center;
   width: 300px;
   padding: 20px;
   color: #000;
+ 
 }
 
-@media (max-width: 600px) {
-  .card {
+
+
+@media (max-width:600px) {
+
+  .card{
     width: 100%;
-    padding: 0px;
+    padding:0px;
     margin-bottom: 10px;
   }
+
 }
