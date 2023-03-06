@@ -38,7 +38,7 @@ const VerifyPage = () => {
             <Text textAlign={"center"}>still can't find the email ?</Text>
           </CardBody>
           <CardFooter>
-            <Button colorScheme="blue">Resend Email</Button>
+            <Button colorScheme="yellow">Resend Email</Button>
           </CardFooter>
           <Text>
             Need Help ? <Link color={'blue.500'}>Contact Us</Link>
