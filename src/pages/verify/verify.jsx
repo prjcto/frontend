@@ -1,31 +1,72 @@
 import React from "react";
-import "./verify.styles.scss";
 import { MdMarkEmailRead } from "react-icons/md";
+import { decodeToken } from "react-jwt";
+import API from "../../api/api";
 import {
   Text,
   Card,
   CardHeader,
   Heading,
   CardBody,
-  CardFooter,
-  Button,
-  Link
+  Center,
+  Link,
+  useToast
 } from "@chakra-ui/react";
+import {
+  useParams,
+  useNavigate 
+} from "react-router-dom";
+import "./verify.styles.scss";
+
 const VerifyPage = () => {
+  let { tokenId } = useParams();
+  let navigate = useNavigate();
+
+  const toast = useToast();
+
+  let { email } = decodeToken(tokenId)
+
+  React.useEffect(() => {
+    API.patch(`/user/verify/${tokenId}`)
+    .then(() => {
+      toast({
+        title: "Your account has been verified",
+        description: "You have full access to GoldKamas now!",
+        status: "success",
+        duration: 1500,
+        position: "bottom-right",
+        isClosable: true,
+      });
+      setTimeout(() => {
+        navigate("/login"); 
+      }, 1500);
+    })
+    .catch(() => {
+      toast({
+        title: "Something is wrong!",
+        status: "error",
+        position: "bottom-right",
+        duration: 1500,
+        isClosable: true,
+      });
+    })
+  }, [tokenId])
+
   return (
     <div className="Verify">
+      <Center h='90vh'>
       <div className="v-card">
         <Card align="center" padding={'20px'} bg={'transparent'} backdropBlur={'40px'}>
           <MdMarkEmailRead className="v-icon" />
           <CardHeader>
-            <Heading size="md"> Please verify your email</Heading>
+            <Heading size="md"> Your account is verified</Heading>
           </CardHeader>
           <CardBody>
             <Text textAlign={"center"}>
               You're almost there! We sent an email to
             </Text>
             <Text className="c-email">
-              email@email.com
+              {email}
             </Text>
             <br />
             <Text >
@@ -34,17 +75,14 @@ const VerifyPage = () => {
             <Text>
               if you don't see it, you may need yo check you spam folder.
             </Text>
-            <br />
             <Text textAlign={"center"}>still can't find the email ?</Text>
           </CardBody>
-          <CardFooter>
-            <Button colorScheme="yellow">Resend Email</Button>
-          </CardFooter>
           <Text>
             Need Help ? <Link color={'blue.500'}>Contact Us</Link>
           </Text>
         </Card>
       </div>
+      </Center>
     </div>
   );
 };
