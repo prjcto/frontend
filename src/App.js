@@ -67,7 +67,7 @@ const App = () => {
             <Route path="dofus-buy" element={<DofusB />} />
             <Route path="dofus-touch-buy" element={<TouchB />} />
             <Route path="dofus-retro-buy" element={<RetroB />} />
-            <Route path="verify" element={<VerifyPage />} />
+            <Route path="verify/:tokenId" element={<VerifyPage />} />
           </Route>
         </Routes>
       </ProductsContext.Provider>
