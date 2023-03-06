@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import RateTable from "../../components/rate-table";
 import {
   Text,
   FormControl,
@@ -118,6 +119,7 @@ const Sell = () => {
           <Input placeholder="Comment" />
         </FormControl>
       </FormControl>
+      <RateTable category="sell" />
     </div>
   );
 };
