@@ -38,8 +38,8 @@ const RateTable = ({ category }) => {
                     {price.map((item, index2) => (
                       <Tr key={index2}>
                         <Td>{item.server}</Td>
-                        <Td></Td>
-                        <Td></Td>
+                        <Td>-</Td>
+                        <Td>-</Td>
                         <Td>{item.price_usdt}$/m</Td>
                         <Td>Available</Td>
                       </Tr>
