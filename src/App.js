@@ -11,12 +11,12 @@ import Login from "./pages/login/login.page.jsx";
 import Buy from "./pages/buy/buy.pages";
 import Sell from "./pages/sell/sell.page.jsx";
 import Exchange from "./pages/exchange/exchange.pages.jsx";
-import Dofus from "./dofuses/sell/dofus/dofus.jsx";
-import Touch from "./dofuses/sell/touch/touch.jsx";
-import Retro from "./dofuses/sell/retro/retro.jsx";
-import DofusB from "./dofuses/buy/dofus/dofus.jsx";
-import TouchB from "./dofuses/buy/touch/touch.jsx";
-import RetroB from "./dofuses/buy/retro/retro.jsx";
+// import Dofus from "./dofuses/sell/dofus/dofus.jsx";
+// import Touch from "./dofuses/sell/touch/touch.jsx";
+// import Retro from "./dofuses/sell/retro/retro.jsx";
+// import DofusB from "./dofuses/buy/dofus/dofus.jsx";
+// import TouchB from "./dofuses/buy/touch/touch.jsx";
+// import RetroB from "./dofuses/buy/retro/retro.jsx";
 import VerifyPage from "./pages/verify/verify.jsx";
 import Dashboard from "./pages/dashboard/dashboard.pages";
 
@@ -24,9 +24,9 @@ import "./App.css";
 
 const App = () => {
   const [user, setUser] = React.useState(
-    decodeToken(localStorage.getItem("token"))
+    decodeToken(localStorage.getItem("token")) || {}
   );
-  const [products, setProducts] = React.useState([]);
+  const [products, setProducts] = React.useState();
   const isTokenExpired = isExpired(localStorage.getItem("token"));
 
   const UserProvider = React.useMemo(
@@ -40,6 +40,7 @@ const App = () => {
   );
 
   React.useEffect(() => {
+    console.log(user);
     if (isTokenExpired) {
       localStorage.setItem("token", "");
       setUser();
@@ -61,13 +62,13 @@ const App = () => {
             <Route path="buy-kamas" element={<Buy />} />
             <Route path="sell-kamas" element={<Sell />} />
             <Route path="exchange-kamas" element={<Exchange />} />
-            <Route path="dofus-sell" element={<Dofus />} />
+            {/* <Route path="dofus-sell" element={<Dofus />} />
             <Route path="dofus-touch-sell" element={<Touch />} />
             <Route path="dofus-retro-sell" element={<Retro />} />
             <Route path="buy-kamas" element={<Buy />} />
             <Route path="dofus-buy" element={<DofusB />} />
             <Route path="dofus-touch-buy" element={<TouchB />} />
-            <Route path="dofus-retro-buy" element={<RetroB />} />
+            <Route path="dofus-retro-buy" element={<RetroB />} /> */}
             <Route path="verify/:tokenId" element={<VerifyPage />} />
             <Route path="dashboard" element={<Dashboard />} />
           </Route>

@@ -22,6 +22,7 @@ const Dashboard = () => {
   return (
     <div className="Dashboard">
       <Tabs
+        mt="5vh"
         variant="soft-rounded"
         colorScheme="yellow"
         align="center"
@@ -33,10 +34,10 @@ const Dashboard = () => {
         </TabList>
         <TabPanels>
           <TabPanel>
-            <Flex justifyContent="center" gap="4">
+            <Flex mt="8vh" justifyContent="center" gap="16">
               {products.map(({ name }, index) => (
                 <>
-                  <Card align="center">
+                  <Card align="center" w="35vh">
                     <CardHeader>
                       <Heading size="md" key={index}>
                         {" "}
@@ -44,7 +45,7 @@ const Dashboard = () => {
                       </Heading>
                     </CardHeader>
                     <CardBody>
-                      <Image fallbackSrc="https://via.placeholder.com/150" />
+                      <Image w="35vh" borderRadius='lg' fallbackSrc="https://via.placeholder.com/150" />
                     </CardBody>
                     <CardFooter>
                       <Button colorScheme={"yellow"}>Edit</Button>

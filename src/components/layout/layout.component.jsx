@@ -61,6 +61,17 @@ const Layout = ({ user }) => {
               </MenuButton>
               <MenuList bgColor="#F2CD5C" border="#F2CD5C">
                 <MenuGroup>
+                  {user?.role === "admin"  ? (
+                     <Link to="dashboard">
+                        <MenuItem
+                        bgColor="#F2CD5C"
+                        color="white"
+                        _hover={{ bg: "#f5c533" }}
+                        >
+                        Dashboard
+                      </MenuItem>
+                     </Link>
+                  ) : ""}
                   {user ? (
                     <>
                       <MenuItem
