@@ -17,7 +17,8 @@ import Retro from "./dofuses/sell/retro/retro.jsx";
 import DofusB from "./dofuses/buy/dofus/dofus.jsx";
 import TouchB from "./dofuses/buy/touch/touch.jsx";
 import RetroB from "./dofuses/buy/retro/retro.jsx";
-import VerifyPage from "./pages/verify/verify";
+import VerifyPage from "./pages/verify/verify.jsx";
+import Dashboard from "./pages/dashboard/dashboard.pages";
 
 import "./App.css";
 
@@ -68,6 +69,7 @@ const App = () => {
             <Route path="dofus-touch-buy" element={<TouchB />} />
             <Route path="dofus-retro-buy" element={<RetroB />} />
             <Route path="verify/:tokenId" element={<VerifyPage />} />
+            <Route path="dashboard" element={<Dashboard />} />
           </Route>
         </Routes>
       </ProductsContext.Provider>
