@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import RateTable from "../../../components/rate-table";
 import {
   Text,
   FormControl,
@@ -46,6 +46,7 @@ const RetroB = () => {
         <Input placeholder="Amount" />
       </FormControl>
       <Button colorScheme="blue">Buy</Button>
+      <RateTable category="buy" />
     </div>
   );
 };
