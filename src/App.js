@@ -40,7 +40,6 @@ const App = () => {
   );
 
   React.useEffect(() => {
-    console.log(user);
     if (isTokenExpired) {
       localStorage.setItem("token", "");
       setUser();

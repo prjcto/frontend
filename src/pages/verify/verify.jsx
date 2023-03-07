@@ -1,6 +1,7 @@
 import React from "react";
-import { MdMarkEmailRead } from "react-icons/md";
 import { decodeToken } from "react-jwt";
+import UserContext from "../../context/userContext";
+import { MdMarkEmailRead } from "react-icons/md";
 import API from "../../api/api";
 import {
   Text,
@@ -24,10 +25,12 @@ const VerifyPage = () => {
 
   const toast = useToast();
 
+  let { user } = React.useContext(UserContext)
   let { email } = decodeToken(tokenId)
 
   React.useEffect(() => {
-    API.patch(`/user/verify/${tokenId}`)
+    if(!user) {
+      API.patch(`/user/verify/${tokenId}`)
     .then(() => {
       toast({
         title: "Your account has been verified",
@@ -50,39 +53,42 @@ const VerifyPage = () => {
         isClosable: true,
       });
     })
-  }, [tokenId])
+    }
+  }, [tokenId, navigate, user, toast])
 
   return (
     <div className="Verify">
-      <Center h='90vh'>
-      <div className="v-card">
-        <Card align="center" padding={'20px'} bg={'transparent'} backdropBlur={'40px'}>
-          <MdMarkEmailRead className="v-icon" />
-          <CardHeader>
-            <Heading size="md"> Your account is verified</Heading>
-          </CardHeader>
-          <CardBody>
-            <Text textAlign={"center"}>
-              You're almost there! We sent an email to
-            </Text>
-            <Text className="c-email">
-              {email}
-            </Text>
-            <br />
-            <Text >
-              Just click on the link on your email to complete your signup.
-            </Text>
+      {user ? "" : (
+        <Center h='90vh'>
+        <div className="v-card">
+          <Card align="center" padding={'20px'} bg={'transparent'} backdropBlur={'40px'}>
+            <MdMarkEmailRead className="v-icon" />
+            <CardHeader>
+              <Heading size="md"> Your account is verified</Heading>
+            </CardHeader>
+            <CardBody>
+              <Text textAlign={"center"}>
+                You're almost there! We sent an email to
+              </Text>
+              <Text className="c-email">
+                {email}
+              </Text>
+              <br />
+              <Text >
+                Just click on the link on your email to complete your signup.
+              </Text>
+              <Text>
+                if you don't see it, you may need yo check you spam folder.
+              </Text>
+              <Text textAlign={"center"}>still can't find the email ?</Text>
+            </CardBody>
             <Text>
-              if you don't see it, you may need yo check you spam folder.
+              Need Help ? <Link color={'blue.500'}>Contact Us</Link>
             </Text>
-            <Text textAlign={"center"}>still can't find the email ?</Text>
-          </CardBody>
-          <Text>
-            Need Help ? <Link color={'blue.500'}>Contact Us</Link>
-          </Text>
-        </Card>
-      </div>
-      </Center>
+          </Card>
+        </div>
+        </Center>
+      )}
     </div>
   );
 };
