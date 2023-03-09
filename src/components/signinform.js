@@ -28,7 +28,6 @@ const SigninForm = ({ toast }) => {
       validationSchema={SigninSchema}
       onSubmit={(values, { resetForm }) => {
         signin({ setisLoading, values, resetForm, toast });
-        console.log(values);
       }}
     >
       <Form className="Login-Form">

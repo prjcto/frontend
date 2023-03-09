@@ -45,7 +45,11 @@ const Dashboard = () => {
                       </Heading>
                     </CardHeader>
                     <CardBody>
-                      <Image w="35vh" borderRadius='lg' fallbackSrc="https://via.placeholder.com/150" />
+                      <Image
+                        w="35vh"
+                        borderRadius="lg"
+                        fallbackSrc="https://via.placeholder.com/150"
+                      />
                     </CardBody>
                     <CardFooter>
                       <Button colorScheme={"yellow"}>Edit</Button>
