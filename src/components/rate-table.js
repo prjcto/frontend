@@ -24,7 +24,7 @@ const RateTable = ({ category }) => {
               <Tr>
                 <Th>Servers</Th>
                 <Th>Skrill</Th>
-                <Th>PAYPAL</Th>
+                <Th>CIH </Th>
                 <Th>usdt</Th>
                 <Th>Status</Th>
               </Tr>
@@ -39,7 +39,7 @@ const RateTable = ({ category }) => {
                       <Tr key={index2}>
                         <Td>{item.server}</Td>
                         <Td>-</Td>
-                        <Td>-</Td>
+                        <Td>{item.price_cih}dh/m</Td>
                         <Td>{item.price_usdt}$/m</Td>
                         <Td>Available</Td>
                       </Tr>

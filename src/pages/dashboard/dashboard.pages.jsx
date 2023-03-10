@@ -1,5 +1,7 @@
 import React from "react";
 import ProductsContext from "../../context/productsContext";
+import getOrders, { getStatus } from "../../actions/order/getorders";
+import DashboardOrder from "../../components/dashboard-order";
 import {
   Tabs,
   TabList,
@@ -14,10 +16,17 @@ import {
   Heading,
   Image,
   Flex,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 const Dashboard = () => {
   const { products } = React.useContext(ProductsContext);
+  const [orders, setOrders] = React.useState([]);
+  const [status, setStatus] = React.useState({});
+  const [morder, setMorder] = React.useState({});
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  React.useEffect(() => getOrders({ setOrders }), []);
 
   return (
     <div className="Dashboard">
@@ -35,9 +44,9 @@ const Dashboard = () => {
         <TabPanels>
           <TabPanel>
             <Flex mt="8vh" justifyContent="center" gap="16">
-              {products.map(({ name }, index) => (
+              {products?.map(({ name }, index) => (
                 <>
-                  <Card align="center" w="35vh">
+                  <Card key={index} align="center" w="35vh">
                     <CardHeader>
                       <Heading size="md" key={index}>
                         {" "}
@@ -60,7 +69,17 @@ const Dashboard = () => {
             </Flex>
           </TabPanel>
           <TabPanel>
-            <p>Nunez DRAGAOOOO!</p>
+            <DashboardOrder
+              orders={orders}
+              morder={morder}
+              isOpen={isOpen}
+              onOpen={onOpen}
+              onClose={onClose}
+              setMorder={setMorder}
+              status={status}
+              setStatus={setStatus}
+              getStatus={getStatus}
+            />
           </TabPanel>
         </TabPanels>
       </Tabs>
