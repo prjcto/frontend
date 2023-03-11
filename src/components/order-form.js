@@ -100,14 +100,17 @@ const OrderForm = (props) => {
                 setAmout(e.target.value);
               }}
             />
-            <Button
-              type="submit"
-              isLoading={isLoading}
-              loadingText="Submitting"
-              onClick={() => handleSubmit()}
-            >
-              Order
-            </Button>
+
+            <Center mt="2vh">
+              <Button
+                type="submit"
+                isLoading={isLoading}
+                loadingText="Submitting"
+                onClick={() => handleSubmit()}
+              >
+                Order
+              </Button>
+            </Center>
           </FormControl>
         </FormControl>
       </>

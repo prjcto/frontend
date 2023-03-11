@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { isExpired, decodeToken } from "react-jwt";
 import UserContext from "./context/userContext";
 import ProductsContext from "./context/productsContext";
@@ -51,14 +51,26 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout user={user} />}>
             <Route index element={<Home />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Signup />} />
+            <Route
+              path="login"
+              element={user ? <Navigate to="/" /> : <Login />}
+            />
+            <Route
+              path="register"
+              element={user ? <Navigate to="/" /> : <Signup />}
+            />
             <Route path="buy-kamas" element={<Buy />} />
             <Route path="sell-kamas" element={<Sell />} />
             <Route path="exchange-kamas" element={<Exchange />} />
-            <Route path="order/:type/:item" element={<Order />} />
+            <Route
+              path="order/:type/:item"
+              element={!user ? <Navigate to="/register" /> : <Order />}
+            />
             <Route path="verify/:tokenId" element={<VerifyPage />} />
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route
+              path="dashboard"
+              element={!user ? <Navigate to="/register" /> : <Dashboard />}
+            />
           </Route>
         </Routes>
       </ProductsContext.Provider>

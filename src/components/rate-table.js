@@ -5,7 +5,6 @@ import {
   Table,
   Thead,
   Tbody,
-  TableCaption,
   Tr,
   Th,
   Td,
@@ -32,15 +31,14 @@ const RateTable = ({ category }) => {
             <Tbody>
               {products
                 .filter((item) => item.category === category)
-                .map(({ name, price }, index) => (
+                .map(({ price }, index) => (
                   <>
-                    <TableCaption>{name}</TableCaption>
                     {price.map((item, index2) => (
                       <Tr key={index2}>
                         <Td>{item.server}</Td>
-                        <Td>-</Td>
+                        <Td>{item.price_skrill}$/m</Td>
                         <Td>{item.price_cih}dh/m</Td>
-                        <Td>{item.price_usdt}$/m</Td>
+                        <Td>{item.price_usdt} usdt/m</Td>
                         <Td>Available</Td>
                       </Tr>
                     ))}
