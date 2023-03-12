@@ -1,18 +1,25 @@
 import API from "../../api/api";
 
-const createOrder = ({ order, setDetails, onOpen, setIsloading, toast }) => {
+const createOrder = ({
+  order,
+  setDetails,
+  onOpen,
+  setIsloading,
+  toast,
+  type,
+}) => {
   setIsloading(true);
-  API.post("/order", order)
+  API.post(`/order/${type}`, order)
     .then((res) => {
       setIsloading(false);
-      if (order.payment_type === "usdt") {
+      if (order.payment_type === "usdt" && type === "buy") {
         setDetails({
           payment_id: res.data.payment_id,
           pay_address: res.data.pay_address,
           pay_amount: res.data.pay_amount,
         });
         onOpen();
-      } else if (order.payment_type === "skrill") {
+      } else {
         toast({
           title: "Order created.",
           description: "Go check your order history to stay updated.",

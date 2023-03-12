@@ -1,6 +1,7 @@
 import React from "react";
 import ProductsContext from "../../context/productsContext";
 import getOrders, { getStatus } from "../../actions/order/getorders";
+import editOrder from "../../actions/order/edit_order";
 import DashboardOrder from "../../components/dashboard-order";
 import ProductsModal from "../../components/products-modal";
 import {
@@ -16,7 +17,7 @@ import {
   CardFooter,
   Heading,
   Image,
-  Flex,
+  Grid,
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
@@ -34,9 +35,20 @@ const Dashboard = () => {
     price: [],
   });
   const [modal, setModal] = React.useState(false);
+  const [statusChange, setStatusChange] = React.useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   React.useEffect(() => getOrders({ setOrders }), []);
+
+  React.useEffect(() => {
+    let { id, value } = status;
+
+    if (statusChange) {
+      let newStatus = [{ propName: "status", value: value }];
+      editOrder({ id, newStatus, toast });
+      setStatusChange(false);
+    }
+  }, [statusChange, toast, status]);
 
   return (
     <div className="Dashboard">
@@ -59,14 +71,19 @@ const Dashboard = () => {
               onClose={() => setModal(false)}
               toast={toast}
             />
-            <Flex mt="8vh" justifyContent="center" gap="16">
+            <Grid
+              mt="8vh"
+              templateColumns="repeat(3, 1fr)"
+              placeItems={"center"}
+              gap={16}
+            >
               {products?.map((item, index) => (
                 <>
                   <Card key={index} align="center" w="35vh">
                     <CardHeader>
                       <Heading size="md" key={index}>
                         {" "}
-                        {item.name}
+                        {item.name} ({item.category})
                       </Heading>
                     </CardHeader>
                     <CardBody>
@@ -98,7 +115,7 @@ const Dashboard = () => {
                   </Card>
                 </>
               ))}
-            </Flex>
+            </Grid>
           </TabPanel>
           <TabPanel>
             <DashboardOrder
@@ -111,6 +128,7 @@ const Dashboard = () => {
               status={status}
               setStatus={setStatus}
               getStatus={getStatus}
+              setStatusChange={setStatusChange}
             />
           </TabPanel>
         </TabPanels>

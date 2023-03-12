@@ -1,12 +1,30 @@
 .Sell {
-  background: rgb(227,198,91);
-  background: linear-gradient(270deg, rgba(227,198,91,1) 0%, rgba(236,215,135,1) 20%, rgba(227,198,91,1) 50%, rgba(236,215,135,1) 80%, rgba(227,198,91,1) 100%);
-  background-color: #0a3915;
-  color: #000;
-  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: rgb(227, 198, 91);
+  background: linear-gradient(
+    270deg,
+    rgba(227, 198, 91, 1) 0%,
+    rgba(236, 215, 135, 1) 20%,
+    rgba(227, 198, 91, 1) 50%,
+    rgba(236, 215, 135, 1) 80%,
+    rgba(227, 198, 91, 1) 100%
+  );
+  color: white;
   padding: 20px;
-}
 
+  .upper {
+    margin-bottom: 2.5vh;
+  }
+
+  span {
+    background-color: #fff782;
+    width: 65px;
+    height: 5px;
+    display: block;
+    margin: 1px auto;
+  }
+}
 .all {
   display: flex;
   gap: 20px;
@@ -15,12 +33,12 @@
 option {
   color: black;
 }
-@media (max-width:600px) {
-  .Sell{
+@media (max-width: 600px) {
+  .Sell {
     height: auto;
   }
 
-  .all{
+  .all {
     display: block;
   }
 }

@@ -38,6 +38,12 @@ const OrderForm = (props) => {
     isLoading,
     skrillemail,
     setSkrillemail,
+    fullname,
+    setFullname,
+    rib,
+    setRib,
+    address,
+    setAddress,
   } = props;
 
   return (
@@ -74,6 +80,7 @@ const OrderForm = (props) => {
             >
               <option value="skrill">Skrill</option>
               <option value="usdt">Usdt (trc-20)</option>
+              {type === "sell" ? <option value="cih">Cih bank</option> : null}
             </Select>
             {methode === "skrill" ? (
               <>
@@ -87,12 +94,49 @@ const OrderForm = (props) => {
             ) : (
               ""
             )}
+
+            {methode === "cih" ? (
+              <>
+                <FormLabel>Full name (cih)</FormLabel>
+                <Input
+                  type="text"
+                  value={fullname}
+                  onChange={(e) => {
+                    setFullname(e.target.value);
+                  }}
+                />
+                <FormLabel>Full rib (cih)</FormLabel>
+                <Input
+                  type="number"
+                  value={rib}
+                  onChange={(e) => {
+                    setRib(e.target.value);
+                  }}
+                />
+              </>
+            ) : (
+              ""
+            )}
+            {methode === "usdt" && type === "sell" ? (
+              <>
+                <FormLabel>Wallet address </FormLabel>
+                <Input
+                  type="text"
+                  value={address}
+                  onChange={(e) => {
+                    setAddress(e.target.value);
+                  }}
+                />
+              </>
+            ) : (
+              ""
+            )}
             <Text marginBlockStart="1em">
               Quantity (million, ps:10.3=10,300,000):
             </Text>
             <FormLabel>
               Kamas {price.toFixed(2)}
-              {methode === "usdt" ? " usdt" : "$"}
+              {methode === "usdt" ? " usdt" : methode === "cih" ? "dh" : "$"}
             </FormLabel>
             <Input
               value={amout}

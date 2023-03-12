@@ -16,33 +16,36 @@ const Buy = () => {
     <div className="buy">
       <div className="upper">
         <Text fontSize="3xl" as="b">
-          Products
+          Buy Kamas
         </Text>
         <span className="underline"></span>
       </div>
       <div className="buy-cards">
-        {products?.map((product, index) => (
-          <div className="card" key={index}>
-            <Link to={`/order/buy/${product._id}`}>
-              {" "}
-              <Image
-                src={
-                  product.name === "Dofus Kamas"
-                    ? dofus
-                    : product.name === "Dofus Retro"
-                    ? retro
-                    : product.name === "Dofus Touch"
-                    ? touch
-                    : ""
-                }
-                className="img"
-              />
-              <Text fontSize="xl" as="b">
-                Méthode de livraison: Astrub, face à face
-              </Text>
-            </Link>
-          </div>
-        ))}
+        {products
+          ?.filter((item) => item.category === "buy")
+
+          .map((product, index) => (
+            <div className="card" key={index}>
+              <Link to={`/order/buy/${product._id}`}>
+                {" "}
+                <Image
+                  src={
+                    product.name === "Dofus Kamas"
+                      ? dofus
+                      : product.name === "Dofus Retro"
+                      ? retro
+                      : product.name === "Dofus Touch"
+                      ? touch
+                      : ""
+                  }
+                  className="img"
+                />
+                <Text fontSize="xl" as="b">
+                  Méthode de livraison: Astrub, face à face
+                </Text>
+              </Link>
+            </div>
+          ))}
       </div>
 
       <RateTable category="buy" />

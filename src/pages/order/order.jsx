@@ -5,6 +5,7 @@ import ProductsContext from "../../context/productsContext";
 import createOrder from "../../actions/order/create_order";
 import OrderForm from "../../components/order-form";
 import { Text, Link, useDisclosure, useToast } from "@chakra-ui/react";
+import "./order.style.scss";
 
 const Order = () => {
   let { type, item } = useParams();
@@ -13,9 +14,13 @@ const Order = () => {
   let [product, setProduct] = React.useState({});
   let [methode, setMethode] = React.useState();
   let [details, setDetails] = React.useState({});
-
   let [server, setServer] = React.useState("");
   let [name, setName] = React.useState("");
+  let [fullname, setFullname] = React.useState(
+    `${user.firstname} ${user.lastname}`
+  );
+  let [rib, setRib] = React.useState("");
+  let [address, setAddress] = React.useState("");
   let [skrillemail, setSkrillemail] = React.useState(`${user?.email}`);
   let [amout, setAmout] = React.useState(0);
   let [price, setPrice] = React.useState(0);
@@ -33,9 +38,12 @@ const Order = () => {
       customer: user?.userId,
       product: item,
       skrill_email: skrillemail,
+      cih_rib: rib,
+      cih_fullname: fullname,
+      usdt_address: address,
     };
 
-    createOrder({ order, setDetails, onOpen, setIsloading, toast });
+    createOrder({ order, setDetails, onOpen, setIsloading, toast, type });
   };
 
   React.useEffect(() => {
@@ -53,11 +61,13 @@ const Order = () => {
       setPrice(amout * serverList[0]?.price_usdt || 0);
     } else if (methode === "skrill") {
       setPrice(amout * serverList[0]?.price_skrill || 0);
+    } else if (methode === "cih") {
+      setPrice(amout * serverList[0]?.price_cih || 0);
     } else setPrice(0);
   }, [amout, server, product, methode]);
 
   return (
-    <div className="Sell">
+    <div className="order">
       {user ? (
         <OrderForm
           product={product}
@@ -79,6 +89,12 @@ const Order = () => {
           onClose={onClose}
           details={details}
           isLoading={isLoading}
+          fullname={fullname}
+          setFullname={setFullname}
+          rib={rib}
+          setRib={setRib}
+          address={address}
+          setAddress={setAddress}
         />
       ) : (
         <Text
