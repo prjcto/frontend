@@ -1,5 +1,57 @@
-.Buy {
-  background-color: #0a3915;
+.buy {
+  display: grid;
+  place-items: center;
+  background: rgb(227, 198, 91);
+  background: linear-gradient(
+    270deg,
+    rgba(227, 198, 91, 1) 0%,
+    rgba(236, 215, 135, 1) 20%,
+    rgba(227, 198, 91, 1) 50%,
+    rgba(236, 215, 135, 1) 80%,
+    rgba(227, 198, 91, 1) 100%
+  );
   color: white;
   padding: 20px;
+
+  .upper {
+    margin-bottom: 2.5vh;
+  }
+
+  span {
+    background-color: #fff782;
+    width: 65px;
+    height: 5px;
+    display: block;
+    margin: 1px auto;
+  }
+}
+.buy-cards {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: ease-out 0.5s;
+
+  :hover {
+    transform: scale(1.02);
+  }
+}
+
+table {
+  color: #000;
+}
+
+.card {
+  text-align: center;
+  width: 300px;
+  padding: 20px;
+  color: #000;
+  transition: ease-out 0.5s;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 10px;
+  }
 }

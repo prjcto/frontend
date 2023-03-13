@@ -1,5 +1,6 @@
 .Navbar {
     display: flex;
+    width: auto;
 }
 
 .Navbar-Container {
@@ -35,8 +36,8 @@ li{
 .nav-links{
   display: flex;
   align-items: center;
-  justify-content: start;
-  width: 75%;
+  justify-content: flex-start;
+  width: 100%;
   margin-left: 30px;
 }
 

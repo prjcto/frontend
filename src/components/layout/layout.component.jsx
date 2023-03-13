@@ -55,21 +55,36 @@ const Layout = ({ user }) => {
                 colorScheme="none"
                 variant="link"
                 width="30px"
-                z-zIndex="2"
+                z-zindex="2"
               >
                 <FaUserAlt className="icon" />
               </MenuButton>
               <MenuList bgColor="#F2CD5C" border="#F2CD5C">
                 <MenuGroup>
-                  {user ? (
-                    <>
+                  {user?.role === "admin" ? (
+                    <Link to="dashboard">
                       <MenuItem
                         bgColor="#F2CD5C"
                         color="white"
                         _hover={{ bg: "#f5c533" }}
                       >
-                        Profile
+                        Dashboard
                       </MenuItem>
+                    </Link>
+                  ) : (
+                    ""
+                  )}
+                  {user ? (
+                    <>
+                      <Link to="profile">
+                        <MenuItem
+                          bgColor="#F2CD5C"
+                          color="white"
+                          _hover={{ bg: "#f5c533" }}
+                        >
+                          Profile
+                        </MenuItem>
+                      </Link>
                       <MenuItem
                         bgColor="#F2CD5C"
                         color="white"

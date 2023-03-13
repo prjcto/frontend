@@ -1,6 +1,8 @@
 import React from "react";
-import { Text, Flex, Link, Image } from "@chakra-ui/react";
-
+import ProductsContext from "../../context/productsContext";
+import { Link } from "react-router-dom";
+import { Text, Image } from "@chakra-ui/react";
+import RateTable from "../../components/rate-table";
 import dofus from "../../assets/Dofus.png";
 import touch from "../../assets/touch.png";
 import retro from "../../assets/retro.png";
@@ -8,88 +10,45 @@ import retro from "../../assets/retro.png";
 import "./buy.styles.scss";
 
 const Buy = () => {
+  const { products } = React.useContext(ProductsContext);
+
   return (
-    <div className="Buy">
-      <Flex justifyContent="center" gap="10">
-        <div className="card">
-          <Link href="dofus-buy">
-            <Text
-              backgroundColor="#1c8a31"
-              fontSize="xl"
-              align={"center"}
-              borderRadius="8px 8px 0 0"
-            >
-              Dofus Kamas
-            </Text>
-            <center>
-              {" "}
-              <Image src={dofus} className="img" />
-            </center>
-          </Link>
-          <Text
-            backgroundColor="#1c8a31"
-            fontSize="xl"
-            align={"center"}
-            borderRadius="0 0 8px 8px"
-          >
-            <Text as="b">Delivery time: </Text>5 minutes à 24 heures.
-            <br />
-            <Text as="b">Méthode de livraison: </Text>Astrub, face à face.
-          </Text>
-        </div>
-        <div className="card">
-          <Link href="dofus-touch-buy">
-            <Text
-              backgroundColor="#1c8a31"
-              fontSize="xl"
-              align={"center"}
-              borderRadius="8px 8px 0 0"
-            >
-              Dofus Touch Kamas
-            </Text>
-            <center>
-              {" "}
-              <Image src={touch} className="img" />
-            </center>
-          </Link>
-          <Text
-            backgroundColor="#1c8a31"
-            fontSize="xl"
-            align={"center"}
-            borderRadius="0 0 8px 8px"
-          >
-            <Text as="b">Delivery time: </Text>5 minutes à 24 heures.
-            <br />
-            <Text as="b">Méthode de livraison: </Text>Astrub, face à face.
-          </Text>
-        </div>
-        <div className="card">
-          <Link href="dofus-retro-buy">
-            <Text
-              backgroundColor="#1c8a31"
-              fontSize="xl"
-              align={"center"}
-              borderRadius="8px 8px 0 0"
-            >
-              Dofus Retro Kamas
-            </Text>
-            <center>
-              {" "}
-              <Image src={retro} className="img" />
-            </center>
-          </Link>
-          <Text
-            backgroundColor="#1c8a31"
-            fontSize="xl"
-            align={"center"}
-            borderRadius="0 0 8px 8px"
-          >
-            <Text as="b">Delivery time: </Text>5 minutes à 24 heures.
-            <br />
-            <Text as="b">Méthode de livraison: </Text>Astrub, face à face.
-          </Text>
-        </div>
-      </Flex>
+    <div className="buy">
+      <div className="upper">
+        <Text fontSize="3xl" as="b">
+          Buy Kamas
+        </Text>
+        <span className="underline"></span>
+      </div>
+      <div className="buy-cards">
+        {products
+          ?.filter((item) => item.category === "buy")
+
+          .map((product, index) => (
+            <div className="card" key={index}>
+              <Link to={`/order/buy/${product._id}`}>
+                {" "}
+                <Image
+                  src={
+                    product.name === "Dofus Kamas"
+                      ? dofus
+                      : product.name === "Dofus Retro"
+                      ? retro
+                      : product.name === "Dofus Touch"
+                      ? touch
+                      : ""
+                  }
+                  className="img"
+                />
+                <Text fontSize="xl" as="b">
+                  Méthode de livraison: Astrub, face à face
+                </Text>
+              </Link>
+            </div>
+          ))}
+      </div>
+
+      <RateTable category="buy" />
     </div>
   );
 };

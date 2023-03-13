@@ -1,18 +1,37 @@
 .Exchange {
-  background-color: #0a3915;
-  color: white;
+  display: grid;
+  place-items: center;
+  background: rgb(227, 198, 91);
+  background: linear-gradient(
+    270deg,
+    rgba(227, 198, 91, 1) 0%,
+    rgba(236, 215, 135, 1) 20%,
+    rgba(227, 198, 91, 1) 50%,
+    rgba(236, 215, 135, 1) 80%,
+    rgba(227, 198, 91, 1) 100%
+  );
   padding: 20px;
+
+  .upper {
+    color: white;
+    margin-bottom: 2.5vh;
+  }
+
+  .underline {
+    background-color: #fff782;
+    width: 65px;
+    height: 5px;
+    display: block;
+    margin: 1px auto;
+  }
 }
 
-.dofus-logos {
-  display: flex;
-  justify-content: center;
+.card {
+  cursor: pointer;
 }
 
-.note {
-  display: flex;
-  align-items: center;
-}
-.note svg {
-  margin-right: 10px;
+@media (max-width: 768px) {
+  .Exchange {
+    height: 100vh;
+  }
 }
