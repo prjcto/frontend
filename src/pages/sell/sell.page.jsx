@@ -15,7 +15,7 @@ const Sell = () => {
     <div className="Sell">
       <div className="upper">
         <Text fontSize="3xl" as="b">
-          Sell your kamas
+          Sell kamas
         </Text>
         <span className="underline"></span>
       </div>

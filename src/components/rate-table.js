@@ -28,23 +28,21 @@ const RateTable = ({ category }) => {
                 <Th>Status</Th>
               </Tr>
             </Thead>
-            <Tbody>
-              {products
-                .filter((item) => item.category === category)
-                .map(({ price }, index) => (
-                  <>
-                    {price.map((item, index2) => (
-                      <Tr key={index2}>
-                        <Td>{item.server}</Td>
-                        <Td>{item.price_skrill}$/m</Td>
-                        <Td>{item.price_cih}dh/m</Td>
-                        <Td>{item.price_usdt} usdt/m</Td>
-                        <Td>Available</Td>
-                      </Tr>
-                    ))}
-                  </>
-                ))}
-            </Tbody>
+            {products
+              .filter((item) => item.category === category)
+              .map(({ price, status }, index) => (
+                <Tbody key={index}>
+                  {price.map((item, index2) => (
+                    <Tr key={index2}>
+                      <Td>{item.server}</Td>
+                      <Td>{item.price_skrill}$/m</Td>
+                      <Td>{item.price_cih}dh/m</Td>
+                      <Td>{item.price_usdt} usdt/m</Td>
+                      <Td>{item.status}</Td>
+                    </Tr>
+                  ))}
+                </Tbody>
+              ))}
           </Table>
         </TableContainer>
       ) : (

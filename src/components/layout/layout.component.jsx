@@ -55,7 +55,7 @@ const Layout = ({ user }) => {
                 colorScheme="none"
                 variant="link"
                 width="30px"
-                z-zIndex="2"
+                z-zindex="2"
               >
                 <FaUserAlt className="icon" />
               </MenuButton>

@@ -30,7 +30,9 @@ const createOrder = ({
         });
       }
     })
-    .catch((err) => console.error(err));
+    .catch(() => {
+      setIsloading(false);
+    });
 };
 
 export default createOrder;
